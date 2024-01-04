@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div id="element">
+            <button id="myButton">Click</button>
+            <button onclick="createUl()" >Click3</button>
+            <button  id="myButton2">Click2</button>
+            <button  id="myButton4">Click4</button>
+            <button  id="kd">kd</button>
+            <div class="area">
+              <h2>dkfjdl</h2>
+            </div>
+        </div>
+        <div  class="ten">
+            <ul id="nine">
+                <li class="list">Yamin</li>
+                <li class="list">Nayeem</li>
+                <li class="list">Mahin</li>
+                <li class="list">Tamim</li>
+            </ul>
+            <h2 id="anybody">Anybody here</h2>
+            <input type="text" name="" id="input-field"><button id="inputt">add</button>
+        </div>
+        <div id="eleven">
+            <button id="eventm">event</button>
+            <input type="text" name="" id="focusinput">
+        </div>
+    </section>
+    <script>
+    //    const lists = document.querySelectorAll('#list');
+    //    console.log(lists.length)
+        document.getElementById('eventm').addEventListener('keypress', function(){
+            console.log('doen')
+        })
+        document.getElementById('focusinput').addEventListener('blur',function(){
+            console.log('event focus')
+        })
+        function creatElement(){
+            var newElement = document.createElement('li');
+            newElement.innerText = 'this is new'
+            let box = document.getElementById('nine')
+            box.appendChild(newElement)
+            console.log('done')
+        }
+        function createUl(){
+            const newDiv = document.getElementById('eleven')
+            let ul = document.createElement('ul');
+            ul.innerHTML = `
+            <ul id="nine">
+                <li class="list">Yamin</li>
+                <li class="list">Nayeem</li>
+                <li class="list">Mahin</li>
+                <li class="list">Tamim</li>
+            </ul>
+            `
+           
+            newDiv.appendChild(ul)
+        }
+        function createDiv(){
+            const section = document.querySelector('section');
+            let div = document.createElement('div');
+            div.innerHTML= `
+            <div  class="tweleve">
+            <ul id="six">
+                <li class="list">Yamin</li>
+                <li class="list">Nayeem</li>
+                <li class="list">Mahin</li>
+                <li class="list">Tamim</li>
+            </ul>
+        </div>
+            `
+            section.appendChild(div)
+            // console.log(section)
+        }
+        let btn4 = document.getElementById('myButton4');
+        btn4.addEventListener('click', createDiv)
+        document.getElementById("kd").addEventListener('click', function(){
+            console.log("usable function is ok")
+        })
+        document.getElementById('inputt').addEventListener('click', function(){
+            let field = document.getElementById('input-field');
+            let data = field.value;
+            let hh = document.getElementById('anybody')
+            hh.innerText = data;
+            field.value = "";
+            console.log(field.value)
+        })
+        let list = document.querySelectorAll('#nine li')
+        const dlist = [2, 3, 4]
+        console.log(list.length)
+        // for(const l of list){
+        //     console.log(l.innerText)
+        // }
+         const newi = dlist.map((l)=>{
+           return l;
+        })
+        console.log(newi)
+        let btn = document.getElementById('myButton');
+        let btn2 = document.getElementById('myButton2');
+        btn2.addEventListener('click', creatElement);
+        btn.setAttribute('title', 'this is the first btn')
+    </script>
+</body>
+</html>
