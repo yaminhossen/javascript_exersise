@@ -20,4 +20,10 @@ function countV(name) {
    return c;
 
 }
-console.log(countV('I love bangladesh'));
+// console.log(countV('I love bangladesh'));
+
+ summ(1,2,3);
+ function summ() {
+   console.log(arguments)
+ }
+ summ();
