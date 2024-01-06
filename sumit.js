@@ -38,3 +38,7 @@ function curryAdd(a) {
  // Using the curried function
  let result = curryAdd(2)(3)(4);
  console.log(result);
+
+ let aaa = [3,4,5,6,4,5,3];
+ let cc =new Set(aaa);
+ console.log(cc)
