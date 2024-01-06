@@ -26,4 +26,15 @@ function countV(name) {
  function summ() {
    console.log(arguments)
  }
- summ();
+//  summ();
+function curryAdd(a) {
+   return function (b) {
+     return function (c) {
+       return a + b + c;
+     };
+   };
+ }
+ 
+ // Using the curried function
+ let result = curryAdd(2)(3)(4);
+ console.log(result);
